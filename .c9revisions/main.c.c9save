@@ -1,1 +1,0 @@
-{"ts":1341148597958,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"#include \"beaglebone.h\"\n#include \"gpio.h\"\n\nint main(int args, char **argv) {\n    printf(\"Export result = %d\\n\", gpio_export(34));\n\treturn 0;\n}\n"]],"start1":0,"start2":0,"length1":0,"length2":143}]],"length":143}
