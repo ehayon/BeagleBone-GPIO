@@ -1,4 +1,5 @@
-/* Author: Ethan Hayon
+/*
+ * Author: Ethan Hayon
  * Date: June 28, 2012
  * beaglebone.h
  */
