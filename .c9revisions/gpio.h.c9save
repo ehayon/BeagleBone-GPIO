@@ -1,0 +1,1 @@
+{"ts":1341148597958,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"#ifndef _GPIO_H_\n#define _GPIO_H_\n\n#include <stdlib.h>\n#include <stdio.h>\n\nint gpio_export(int);    // export a pin\nint gpio_unexport(int);  // unexport a pin\n\n/*int digital_write(int, char*);\nint gpio_read(int);\n*/\n#endif"]],"start1":0,"start2":0,"length1":0,"length2":222}]],"length":222}
