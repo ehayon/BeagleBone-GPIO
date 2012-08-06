@@ -6,6 +6,7 @@
 
 int gpio_export(int);    // export a pin
 int gpio_unexport(int);  // unexport a pin
+int gpio_analog_read(unsigned int);  // analog read
 
 /*int digital_write(int, char*);
 int gpio_read(int);
