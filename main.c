@@ -1,8 +1,6 @@
-#include "beaglebone.h"
-#include "gpio.h"
-
 // Licensed under The MIT License (MIT)
 // See MIT-LICENSE file for more
+#include "src/beaglebone.h"
 
 int main(int args, char **argv) {
 	printf("--- Begin program execution ---\n");

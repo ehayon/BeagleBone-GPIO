@@ -1,5 +1,6 @@
+DIR = src/
 SRC = gpio.c
-OBJ = $(SRC:.c=.o)
+OBJ = $(DIR)$(SRC:.c=.o)
 NAME = libbeaglebone.a
 TMS = main.c
 TMO = $(TMS:.c=.o)

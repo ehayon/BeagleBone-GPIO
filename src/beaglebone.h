@@ -13,8 +13,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "gpio.h"
-
 #define HIGH "high"
 #define LOW "low"
 
