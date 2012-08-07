@@ -2,7 +2,11 @@
  * Author: Ethan Hayon
  * Date: July 1, 2012
  * gpio.h
+ *
+ * Licensed under the MIT License (MIT)
+ * See MIT-LICENSE file for more
  */
+
 #include "gpio.h"
 
 #define EXPORT fopen("/sys/class/gpio/export", "w")
