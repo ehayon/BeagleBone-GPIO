@@ -18,7 +18,19 @@
  */
 int gpio_export(int p) {
     FILE *fp = NULL;
-    if((fp = EXPORT) == NULL) {
+    
+    // try to get the environment var
+    char gpio_dir[128];
+    char *env = getenv("GPIO");
+    sprintf(gpio_dir, "%s/export", env); 
+
+    if(env != NULL) {
+        if((fp = fopen(gpio_dir, "w")) == NULL) {
+            perror("Failed opening custom directory for EXPORT. Abort.");
+            exit(1);
+        }
+    }
+    else if((fp = EXPORT) == NULL) {
         perror("Cannot export pin");
         exit(1);
     }
@@ -33,7 +45,19 @@ int gpio_export(int p) {
  */
 int gpio_unexport(int p) {
 	FILE *fp = NULL;
-	if((fp = UNEXPORT) == NULL) {
+    
+    // try to get the environment var
+    char gpio_dir[128];
+    char *env = getenv("GPIO");
+    sprintf(gpio_dir, "%s/unexport", env); 
+
+    if(env != NULL) {
+        if((fp = fopen(gpio_dir, "w")) == NULL) {
+            perror("Failed opening custom directory for UNEXPORT. Abort.");
+            exit(1);
+        }
+    }
+    else if((fp = UNEXPORT) == NULL) {
 		perror("Cannot unexport pin");
 		exit(1);
 	}
@@ -49,9 +73,18 @@ int gpio_analog_read(unsigned int p) {
 	FILE *fp = NULL;
 	char buf[50];
 	int val;
-	sprintf(buf, "/sys/class/gpio/gpio%d/value", p);
-	if((fp = fopen(buf, "r")) == NULL) {
-		perror("Is the pin exported?");
+    
+    // try to get the environment var
+    char *env = getenv("GPIO");
+
+    // if we have $GPIO, set the custom dir
+    if(env != NULL)
+        sprintf(buf, "%s/gpio%d/value", env, p);
+    else
+	    sprintf(buf, "/sys/class/gpio/gpio%d/value", p);
+
+    if((fp = fopen(buf, "r")) == NULL) {
+		perror("Analog read failed. Is the pin exported?");
 		exit(1);
 	}
 	fscanf(fp, "%d", &val);
