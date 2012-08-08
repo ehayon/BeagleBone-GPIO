@@ -1,4 +1,4 @@
-### A BeagleBone GPIO Library
+### A BeagleBone/RaspberryPi GPIO Library
 
 TODO: 
-- Give the user the ability to specify their own '/sys/class/gpio' directory
+- Create a gpio_digital_read() function
