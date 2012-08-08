@@ -4,13 +4,8 @@
 
 int main(int args, char **argv) {
 
-    char *custom_dir = getenv("GPIO");
-    if(custom_dir != NULL) {
-        printf("Default GPIO override: %s\n\n", custom_dir);
-    }
-    else {
-        printf("Using default GPIO class: /sys/class/gpio\n");
-    }
+    char *custom_dir = gpio_dir();
+    printf("Using directory: %s\n\n", custom_dir);
 
     printf("--- Begin program execution ---\n");
 	printf("Export result = %d\n", gpio_export(34));
