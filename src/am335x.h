@@ -14,6 +14,8 @@
 #define GPIO_CLEARDATAOUT (0x190)
 #define GPIO_SETDATAOUT   (0x194)
 #define GPIO_OE			  (0x134)
+#define GPIO_DATAOUT      (0x13C)
+#define GPIO_DATAIN       (0x138)
 
 typedef struct s_PWM {
 	char muxmode; /*!< mux mode, 0-7, see am335x technical manual */
@@ -91,6 +93,7 @@ typedef struct s_PIN {
 #define PULLDOWN ((unsigned char)(0))
 #define DISABLED ((unsigned char)(2))
 
+#define CONFIG_MUX_PATH "/sys/kernel/debug/omap_mux"
 
 
 

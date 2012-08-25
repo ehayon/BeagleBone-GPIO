@@ -36,20 +36,50 @@ int init() {
 }
 
 /**
+ * Set up a pin for future use
+ * @param pin The pin to set up
+ * @param direction Configure the pin as INPUT or OUTPUT
+ * @param mux Mux mode to use for this pin 0-7
+ * @param pull PULLUP, PULLDOWN, or DISABLED
+ * @returns the pin was successfully configured
+ */
+int pinMode(PIN pin, unsigned char direction, unsigned char mux, unsigned char pull) {
+	// map over the values of pull, 0=pulldown, 1=pullup, 2=disabled
+	int pin_data = 0;
+	pin_data |=  mux; // set the mux mode
+	// set up the pull up/down resistors
+	if(pull == DISABLED) pin_data |= 1 << 3;
+	if(pull == PULLUP)   pin_data |= 1 << 4;
+	pin_data |= direction << 5; // set up the pin direction
+	// write the pin_data
+	FILE *fp = NULL;
+	char muxfile[64];
+	sprintf(muxfile, "%s/%s", CONFIG_MUX_PATH, pin.mux);
+	// open the file
+	if((fp = fopen(muxfile, "w")) == NULL) {
+		perror("Cannot set pin mode");
+		exit(1);
+	}
+	fprintf(fp, "%x", pin_data);
+	fclose(fp);
+	
+	return 1;
+}
+
+
+/**
  * Set a GPIO digital output * @param p Pin to write to
  * @param mode Position to set the pin, HIGH or LOW
  * @returns output was successfully written
  */
 int digitalWrite(PIN p, uint8_t mode) {
 	init();
-	if(mode == HIGH)
-		map[(p.gpio_bank-MMAP_OFFSET+0x13c)/4] |= 1<<p.bank_id;
-	else
-		map[(p.gpio_bank-MMAP_OFFSET+0x13c)/4] &= ~(1<<p.bank_id);
-	
+	if(mode == HIGH) map[(p.gpio_bank-MMAP_OFFSET+GPIO_DATAOUT)/4] |= 1<<p.bank_id;
+	else map[(p.gpio_bank-MMAP_OFFSET+GPIO_DATAOUT)/4] &= ~(1<<p.bank_id);
 	return 1;
 }
 
-int digitalRead(PIN p, uint8_t mode) {
-	return 1;
+int digitalRead(PIN p) {
+	init();
+	return (map[(p.gpio_bank-MMAP_OFFSET+GPIO_DATAIN)/4] & (1<<p.bank_id))>>p.bank_id;
 }
