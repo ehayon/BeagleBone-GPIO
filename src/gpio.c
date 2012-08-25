@@ -16,6 +16,7 @@ static char mapped = FALSE;
 
 /**
  * map /dev/mem to memory
+ *
  * @returns whether or not the mapping of /dev/mem into memory was successful
  */
 int init() {
@@ -40,6 +41,7 @@ int init() {
 
 /**
  * Set up a pin for future use
+ *
  * @param pin The pin to set up
  * @param direction Configure the pin as INPUT or OUTPUT
  * @param mux Mux mode to use for this pin 0-7
@@ -72,6 +74,7 @@ int pinMode(PIN pin, unsigned char direction, unsigned char mux, unsigned char p
 
 /**
  * Set a GPIO digital output * @param p Pin to write to
+ *
  * @param mode Position to set the pin, HIGH or LOW
  * @returns output was successfully written
  */
@@ -82,6 +85,13 @@ int digitalWrite(PIN p, uint8_t mode) {
 	return 1;
 }
 
+/**
+ * Read the input from a digital input. You must set 
+ * the pin as an INPUT using the pinMode function
+ *
+ * @param p Pin to read from
+ * @returns the value of the pin
+ */
 int digitalRead(PIN p) {
 	init();
 	return (map[(p.gpio_bank-MMAP_OFFSET+GPIO_DATAIN)/4] & (1<<p.bank_id))>>p.bank_id;
