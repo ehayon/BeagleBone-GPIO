@@ -1,0 +1,51 @@
+\hypertarget{gpio_8c}{\section{src/gpio.c File Reference}
+\label{gpio_8c}\index{src/gpio.\-c@{src/gpio.\-c}}
+}
+{\ttfamily \#include \char`\"{}gpio.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{gpio_8c_a05848de25ac2dbec233935058a1d24b4}{init} ()
+\item 
+int \hyperlink{gpio_8c_a9507becb482f68c51a7c22496f485674}{digital\-Write} (\hyperlink{structs___p_i_n}{P\-I\-N} p, uint8\-\_\-t mode)
+\item 
+\hypertarget{gpio_8c_a4ca4813b96dd974f8311e3b31275242c}{int {\bfseries digital\-Read} (\hyperlink{structs___p_i_n}{P\-I\-N} p, uint8\-\_\-t mode)}\label{gpio_8c_a4ca4813b96dd974f8311e3b31275242c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Ethan Hayon
+\end{DoxyAuthor}
+This file contains G\-P\-I\-O functions using high performance mmap of /dev/mem 
+
+\subsection{Function Documentation}
+\hypertarget{gpio_8c_a9507becb482f68c51a7c22496f485674}{\index{gpio.\-c@{gpio.\-c}!digital\-Write@{digital\-Write}}
+\index{digital\-Write@{digital\-Write}!gpio.c@{gpio.\-c}}
+\subsubsection[{digital\-Write}]{\setlength{\rightskip}{0pt plus 5cm}int digital\-Write (
+\begin{DoxyParamCaption}
+\item[{{\bf P\-I\-N}}]{p, }
+\item[{uint8\-\_\-t}]{mode}
+\end{DoxyParamCaption}
+)}}\label{gpio_8c_a9507becb482f68c51a7c22496f485674}
+Set a G\-P\-I\-O digital output $\ast$ 
+\begin{DoxyParams}{Parameters}
+{\em p} & Pin to write to \\
+\hline
+{\em mode} & Position to set the pin, H\-I\-G\-H or L\-O\-W \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+output was successfully written 
+\end{DoxyReturn}
+\hypertarget{gpio_8c_a05848de25ac2dbec233935058a1d24b4}{\index{gpio.\-c@{gpio.\-c}!init@{init}}
+\index{init@{init}!gpio.c@{gpio.\-c}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}int init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{gpio_8c_a05848de25ac2dbec233935058a1d24b4}
+map /dev/mem to memory \begin{DoxyReturn}{Returns}
+whether or not the mapping of /dev/mem into memory was successful 
+\end{DoxyReturn}

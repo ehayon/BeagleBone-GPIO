@@ -4,31 +4,50 @@
 \subsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{structs___p_i_n_a5ac083a645d964373f022d03df4849c8}{char $\ast$ {\bfseries name}}\label{structs___p_i_n_a5ac083a645d964373f022d03df4849c8}
-
+char $\ast$ \hyperlink{structs___p_i_n_a5ac083a645d964373f022d03df4849c8}{name}
 \item 
-\hypertarget{structs___p_i_n_a51c31aad6d06ea919700fb1a180688bd}{unsigned int {\bfseries gpio\-\_\-bank}}\label{structs___p_i_n_a51c31aad6d06ea919700fb1a180688bd}
-
+unsigned int \hyperlink{structs___p_i_n_a51c31aad6d06ea919700fb1a180688bd}{gpio\-\_\-bank}
 \item 
-\hypertarget{structs___p_i_n_a80b2e88e969b3ee6cde0d4380eadc5dd}{uint8\-\_\-t {\bfseries gpio}}\label{structs___p_i_n_a80b2e88e969b3ee6cde0d4380eadc5dd}
-
+uint8\-\_\-t \hyperlink{structs___p_i_n_a80b2e88e969b3ee6cde0d4380eadc5dd}{gpio}
 \item 
-\hypertarget{structs___p_i_n_a9ef376f6d84af9699e87709d7662cf74}{uint8\-\_\-t {\bfseries bank\-\_\-id}}\label{structs___p_i_n_a9ef376f6d84af9699e87709d7662cf74}
-
+uint8\-\_\-t \hyperlink{structs___p_i_n_a9ef376f6d84af9699e87709d7662cf74}{bank\-\_\-id}
 \item 
-\hypertarget{structs___p_i_n_a268ae5ca019047bc0bc32f45f6e4c8a0}{char $\ast$ {\bfseries mux}}\label{structs___p_i_n_a268ae5ca019047bc0bc32f45f6e4c8a0}
-
+char $\ast$ \hyperlink{structs___p_i_n_a268ae5ca019047bc0bc32f45f6e4c8a0}{mux}
 \item 
-\hypertarget{structs___p_i_n_a7589e79ff8d69f5bff025fe44090cc6a}{uint8\-\_\-t {\bfseries eeprom}}\label{structs___p_i_n_a7589e79ff8d69f5bff025fe44090cc6a}
-
+uint8\-\_\-t \hyperlink{structs___p_i_n_a7589e79ff8d69f5bff025fe44090cc6a}{eeprom}
 \item 
-\hypertarget{structs___p_i_n_ad9d4ffb703dd541884e772f4490febd9}{unsigned char {\bfseries pwm\-\_\-present}}\label{structs___p_i_n_ad9d4ffb703dd541884e772f4490febd9}
-
+unsigned char \hyperlink{structs___p_i_n_ad9d4ffb703dd541884e772f4490febd9}{pwm\-\_\-present}
 \item 
-\hypertarget{structs___p_i_n_a6208909b76c84a75b931c78e24a0cc42}{\hyperlink{structs___p_w_m}{P\-W\-M} {\bfseries pwm}}\label{structs___p_i_n_a6208909b76c84a75b931c78e24a0cc42}
-
+\hyperlink{structs___p_w_m}{P\-W\-M} \hyperlink{structs___p_i_n_a6208909b76c84a75b931c78e24a0cc42}{pwm}
 \end{DoxyCompactItemize}
 
+
+\subsection{Field Documentation}
+\hypertarget{structs___p_i_n_a9ef376f6d84af9699e87709d7662cf74}{\index{s\-\_\-\-P\-I\-N@{s\-\_\-\-P\-I\-N}!bank\-\_\-id@{bank\-\_\-id}}
+\index{bank\-\_\-id@{bank\-\_\-id}!s_PIN@{s\-\_\-\-P\-I\-N}}
+\subsubsection[{bank\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t bank\-\_\-id}}\label{structs___p_i_n_a9ef376f6d84af9699e87709d7662cf74}
+pin number within each bank, should be 0-\/31 \hypertarget{structs___p_i_n_a7589e79ff8d69f5bff025fe44090cc6a}{\index{s\-\_\-\-P\-I\-N@{s\-\_\-\-P\-I\-N}!eeprom@{eeprom}}
+\index{eeprom@{eeprom}!s_PIN@{s\-\_\-\-P\-I\-N}}
+\subsubsection[{eeprom}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t eeprom}}\label{structs___p_i_n_a7589e79ff8d69f5bff025fe44090cc6a}
+position in eeprom \hypertarget{structs___p_i_n_a80b2e88e969b3ee6cde0d4380eadc5dd}{\index{s\-\_\-\-P\-I\-N@{s\-\_\-\-P\-I\-N}!gpio@{gpio}}
+\index{gpio@{gpio}!s_PIN@{s\-\_\-\-P\-I\-N}}
+\subsubsection[{gpio}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t gpio}}\label{structs___p_i_n_a80b2e88e969b3ee6cde0d4380eadc5dd}
+pin number on the am335x processor \hypertarget{structs___p_i_n_a51c31aad6d06ea919700fb1a180688bd}{\index{s\-\_\-\-P\-I\-N@{s\-\_\-\-P\-I\-N}!gpio\-\_\-bank@{gpio\-\_\-bank}}
+\index{gpio\-\_\-bank@{gpio\-\_\-bank}!s_PIN@{s\-\_\-\-P\-I\-N}}
+\subsubsection[{gpio\-\_\-bank}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gpio\-\_\-bank}}\label{structs___p_i_n_a51c31aad6d06ea919700fb1a180688bd}
+which of the four gpio banks is this pin in, i.\-e.\-: G\-P\-I\-O1, r 0x4804\-C000 \hypertarget{structs___p_i_n_a268ae5ca019047bc0bc32f45f6e4c8a0}{\index{s\-\_\-\-P\-I\-N@{s\-\_\-\-P\-I\-N}!mux@{mux}}
+\index{mux@{mux}!s_PIN@{s\-\_\-\-P\-I\-N}}
+\subsubsection[{mux}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ mux}}\label{structs___p_i_n_a268ae5ca019047bc0bc32f45f6e4c8a0}
+file name for setting mux \hypertarget{structs___p_i_n_a5ac083a645d964373f022d03df4849c8}{\index{s\-\_\-\-P\-I\-N@{s\-\_\-\-P\-I\-N}!name@{name}}
+\index{name@{name}!s_PIN@{s\-\_\-\-P\-I\-N}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ name}}\label{structs___p_i_n_a5ac083a645d964373f022d03df4849c8}
+readable name of pin, i.\-e.\-: \char`\"{}\-G\-P\-I\-O1\-\_\-21\char`\"{}, see beaglebone user guide \hypertarget{structs___p_i_n_a6208909b76c84a75b931c78e24a0cc42}{\index{s\-\_\-\-P\-I\-N@{s\-\_\-\-P\-I\-N}!pwm@{pwm}}
+\index{pwm@{pwm}!s_PIN@{s\-\_\-\-P\-I\-N}}
+\subsubsection[{pwm}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-W\-M} pwm}}\label{structs___p_i_n_a6208909b76c84a75b931c78e24a0cc42}
+pwm struct if pwm\-\_\-present is true \hypertarget{structs___p_i_n_ad9d4ffb703dd541884e772f4490febd9}{\index{s\-\_\-\-P\-I\-N@{s\-\_\-\-P\-I\-N}!pwm\-\_\-present@{pwm\-\_\-present}}
+\index{pwm\-\_\-present@{pwm\-\_\-present}!s_PIN@{s\-\_\-\-P\-I\-N}}
+\subsubsection[{pwm\-\_\-present}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char pwm\-\_\-present}}\label{structs___p_i_n_ad9d4ffb703dd541884e772f4490febd9}
+whether or not this pin can be used for P\-W\-M 
 
 The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 

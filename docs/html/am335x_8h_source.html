@@ -66,6 +66,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -88,7 +89,7 @@ $(document).ready(function(){initNavTree('am335x_8h_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -120,21 +121,20 @@ $(document).ready(function(){initNavTree('am335x_8h_source.html','');});
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GPIO_OE           (0x134)</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="structs___p_w_m.html">   18</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structs___p_w_m.html">s_PWM</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">char</span> muxmode;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">char</span> *name;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">char</span> *path;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="structs___p_w_m.html#a29c76b00b745b2dd207ac576dcb658c3">   19</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="structs___p_w_m.html#a29c76b00b745b2dd207ac576dcb658c3">muxmode</a>; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="structs___p_w_m.html#a5ac083a645d964373f022d03df4849c8">   20</a></span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="structs___p_w_m.html#a5ac083a645d964373f022d03df4849c8">name</a>;   </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="structs___p_w_m.html#a44196e6a5696d10442c29e639437196e">   21</a></span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="structs___p_w_m.html#a44196e6a5696d10442c29e639437196e">path</a>;   </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;} <a class="code" href="structs___p_w_m.html">PWM</a>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="structs___p_i_n.html">   24</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structs___p_i_n.html">s_PIN</a> {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">char</span> *name;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> gpio_bank;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    uint8_t gpio;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    uint8_t bank_id;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">char</span> *mux;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    uint8_t eeprom;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> pwm_present;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="structs___p_w_m.html">PWM</a> pwm;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="structs___p_i_n.html#a5ac083a645d964373f022d03df4849c8">   25</a></span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="structs___p_i_n.html#a5ac083a645d964373f022d03df4849c8">name</a>;   </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="structs___p_i_n.html#a51c31aad6d06ea919700fb1a180688bd">   26</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="structs___p_i_n.html#a51c31aad6d06ea919700fb1a180688bd">gpio_bank</a>; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="structs___p_i_n.html#a80b2e88e969b3ee6cde0d4380eadc5dd">   27</a></span>&#160;    uint8_t <a class="code" href="structs___p_i_n.html#a80b2e88e969b3ee6cde0d4380eadc5dd">gpio</a>; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="structs___p_i_n.html#a9ef376f6d84af9699e87709d7662cf74">   28</a></span>&#160;    uint8_t <a class="code" href="structs___p_i_n.html#a9ef376f6d84af9699e87709d7662cf74">bank_id</a>; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="structs___p_i_n.html#a268ae5ca019047bc0bc32f45f6e4c8a0">   29</a></span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="structs___p_i_n.html#a268ae5ca019047bc0bc32f45f6e4c8a0">mux</a>;    </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="structs___p_i_n.html#a7589e79ff8d69f5bff025fe44090cc6a">   30</a></span>&#160;    uint8_t <a class="code" href="structs___p_i_n.html#a7589e79ff8d69f5bff025fe44090cc6a">eeprom</a>; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="structs___p_i_n.html#ad9d4ffb703dd541884e772f4490febd9">   31</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structs___p_i_n.html#ad9d4ffb703dd541884e772f4490febd9">pwm_present</a>; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="structs___p_i_n.html#a6208909b76c84a75b931c78e24a0cc42">   32</a></span>&#160;    <a class="code" href="structs___p_w_m.html">PWM</a> <a class="code" href="structs___p_i_n.html#a6208909b76c84a75b931c78e24a0cc42">pwm</a>;      </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;} <a class="code" href="structs___p_i_n.html">PIN</a>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define TRUE 1</span></div>
@@ -205,7 +205,7 @@ $(document).ready(function(){initNavTree('am335x_8h_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><b>am335x.h</b></li>
-    <li class="footer">Generated on Thu Aug 23 2012 23:08:40 for GPIO MMAP by
+    <li class="footer">Generated on Sat Aug 25 2012 11:08:25 for GPIO MMAP by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>
