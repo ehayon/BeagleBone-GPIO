@@ -1,8 +1,20 @@
+/**
+ * @file gpio.c
+ * @author Ethan Hayon
+ *
+ * This file contains GPIO functions using high
+ * performance mmap of /dev/mem
+ */
+
 #include "gpio.h"
 
 static volatile uint32_t *map;
 static char mapped = FALSE;
 
+/**
+ * map /dev/mem to memory
+ * @returns whether or not the mapping of /dev/mem into memory was successful
+ */
 int init() {
 	if(!mapped) {
 		puts("Initializing...");
@@ -23,6 +35,11 @@ int init() {
 	return mapped;
 }
 
+/**
+ * Set a GPIO digital output * @param p Pin to write to
+ * @param mode Position to set the pin, HIGH or LOW
+ * @returns output was successfully written
+ */
 int digitalWrite(PIN p, uint8_t mode) {
 	init();
 	if(mode == HIGH)

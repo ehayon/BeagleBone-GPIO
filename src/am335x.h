@@ -16,20 +16,20 @@
 #define GPIO_OE			  (0x134)
 
 typedef struct s_PWM {
-	char muxmode;
-	char *name;
-	char *path;
+	char muxmode; /*!< mux mode, 0-7, see am335x technical manual */
+	char *name;   /*!< name of pwm pin, i.e.: "EHRPWM2B" */
+	char *path;   /*!< path to the pwm, i.e.: "ehrpwm.2:1" */
 } PWM;
 
 typedef struct s_PIN {
-	char *name;
-	unsigned int gpio_bank;
-	uint8_t gpio;
-	uint8_t bank_id;
-	char *mux;
-	uint8_t eeprom;
-	unsigned char pwm_present;
-	PWM pwm;
+	char *name;   /*!< readable name of pin, i.e.: "GPIO1_21", see beaglebone user guide */
+	unsigned int gpio_bank; /*!< which of the four gpio banks is this pin in, i.e.: GPIO1, r 0x4804C000 */
+	uint8_t gpio; /*!< pin number on the am335x processor */
+	uint8_t bank_id; /*!< pin number within each bank, should be 0-31 */
+	char *mux;    /*!< file name for setting mux */
+	uint8_t eeprom; /*!< position in eeprom */
+	unsigned char pwm_present; /*!< whether or not this pin can be used for PWM */
+	PWM pwm;      /*!< pwm struct if pwm_present is true */
 
 } PIN;
 
