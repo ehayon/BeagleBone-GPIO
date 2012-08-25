@@ -1,3 +1,13 @@
+/**
+ * @file gpio.h
+ * @author Ethan Hayon
+ *
+ * This file contains the headers for gpio.c
+ *
+ * Licensed under the MIT License (MIT)
+ * See MIT-LICENSE file for more information
+ */
+
 #ifndef _GPIO_H_
 #define _GPIO_H_
 

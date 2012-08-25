@@ -1,3 +1,15 @@
+/**
+ * @file am335x.h
+ * @author Ethan Hayon
+ *
+ * This file contains important config for TI am335x ARM Cortex-A8 SoC
+ * 
+ * PLEASE DO NOT MODIFY
+ *
+ * Licensed under the MIT License (MIT)
+ * See MIT-LICENSE file for more information
+ */
+
 #ifndef _AM335X_H_
 #define _AM335X_H_
 

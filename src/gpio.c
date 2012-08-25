@@ -4,6 +4,9 @@
  *
  * This file contains GPIO functions using high
  * performance mmap of /dev/mem
+ *
+ * Licensed under the MIT License (MIT)
+ * See MIT-LICENSE file for more information
  */
 
 #include "gpio.h"
