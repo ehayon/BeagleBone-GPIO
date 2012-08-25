@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>GPIO MMAP: src/gpio.c File Reference</title>
+<title>GPIO MMAP: src/gpio.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -81,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('gpio_8c.html','');});
+$(document).ready(function(){initNavTree('gpio_8h.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -100,27 +100,46 @@ $(document).ready(function(){initNavTree('gpio_8c.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">gpio.c File Reference</div>  </div>
+<div class="title">gpio.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="gpio_8h_source.html">gpio.h</a>&quot;</code><br/>
-</div><table class="memberdecls">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &lt;sys/types.h&gt;</code><br/>
+<code>#include &lt;sys/stat.h&gt;</code><br/>
+<code>#include &lt;stdint.h&gt;</code><br/>
+<code>#include &lt;sys/mman.h&gt;</code><br/>
+<code>#include &lt;fcntl.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="am335x_8h_source.html">am335x.h</a>&quot;</code><br/>
+</div>
+<p><a href="gpio_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a5bb885982ff66a2e0a0a45a8ee9c35e2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5bb885982ff66a2e0a0a45a8ee9c35e2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HIGH</b>&#160;&#160;&#160;(1)</td></tr>
+<tr class="separator:a5bb885982ff66a2e0a0a45a8ee9c35e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab811d8c6ff3a505312d3276590444289"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab811d8c6ff3a505312d3276590444289"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LOW</b>&#160;&#160;&#160;(0)</td></tr>
+<tr class="separator:ab811d8c6ff3a505312d3276590444289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a05848de25ac2dbec233935058a1d24b4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpio_8c.html#a05848de25ac2dbec233935058a1d24b4">init</a> ()</td></tr>
+<tr class="memitem:a05848de25ac2dbec233935058a1d24b4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpio_8h.html#a05848de25ac2dbec233935058a1d24b4">init</a> ()</td></tr>
 <tr class="separator:a05848de25ac2dbec233935058a1d24b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b20fcfd35f6c05776a28257a5f9baaa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpio_8c.html#a2b20fcfd35f6c05776a28257a5f9baaa">pinMode</a> (<a class="el" href="structs___p_i_n.html">PIN</a> pin, unsigned char direction, unsigned char mux, unsigned char pull)</td></tr>
+<tr class="memitem:a2b20fcfd35f6c05776a28257a5f9baaa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpio_8h.html#a2b20fcfd35f6c05776a28257a5f9baaa">pinMode</a> (<a class="el" href="structs___p_i_n.html">PIN</a> pin, unsigned char direction, unsigned char mux, unsigned char pull)</td></tr>
 <tr class="separator:a2b20fcfd35f6c05776a28257a5f9baaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9507becb482f68c51a7c22496f485674"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpio_8c.html#a9507becb482f68c51a7c22496f485674">digitalWrite</a> (<a class="el" href="structs___p_i_n.html">PIN</a> p, uint8_t mode)</td></tr>
+<tr class="memitem:a9507becb482f68c51a7c22496f485674"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpio_8h.html#a9507becb482f68c51a7c22496f485674">digitalWrite</a> (<a class="el" href="structs___p_i_n.html">PIN</a> p, uint8_t mode)</td></tr>
 <tr class="separator:a9507becb482f68c51a7c22496f485674"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2ea541c9b5174f0efb0cc8d098b7546"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpio_8c.html#ab2ea541c9b5174f0efb0cc8d098b7546">digitalRead</a> (<a class="el" href="structs___p_i_n.html">PIN</a> p)</td></tr>
+<tr class="memitem:ab2ea541c9b5174f0efb0cc8d098b7546"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpio_8h.html#ab2ea541c9b5174f0efb0cc8d098b7546">digitalRead</a> (<a class="el" href="structs___p_i_n.html">PIN</a> p)</td></tr>
 <tr class="separator:ab2ea541c9b5174f0efb0cc8d098b7546"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Ethan Hayon</dd></dl>
-<p>This file contains GPIO functions using high performance mmap of /dev/mem</p>
+<p>This file contains the headers for <a class="el" href="gpio_8c.html">gpio.c</a></p>
 <p>Licensed under the MIT License (MIT) See MIT-LICENSE file for more information </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="ab2ea541c9b5174f0efb0cc8d098b7546"></a>
@@ -194,6 +213,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>mmap /dev/mem into memory</p>
 <p>map /dev/mem to memory</p>
 <dl class="section return"><dt>Returns</dt><dd>whether or not the mapping of /dev/mem into memory was successful </dd></dl>
 
@@ -253,7 +273,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="gpio_8c.html">gpio.c</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="gpio_8h.html">gpio.h</a></li>
     <li class="footer">Generated on Sat Aug 25 2012 12:31:02 for GPIO MMAP by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>

@@ -1,0 +1,117 @@
+\hypertarget{gpio_8h}{\section{src/gpio.h File Reference}
+\label{gpio_8h}\index{src/gpio.\-h@{src/gpio.\-h}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\\*
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+{\ttfamily \#include $<$sys/mman.\-h$>$}\\*
+{\ttfamily \#include $<$fcntl.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}am335x.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{gpio_8h_a5bb885982ff66a2e0a0a45a8ee9c35e2}{\#define {\bfseries H\-I\-G\-H}~(1)}\label{gpio_8h_a5bb885982ff66a2e0a0a45a8ee9c35e2}
+
+\item 
+\hypertarget{gpio_8h_ab811d8c6ff3a505312d3276590444289}{\#define {\bfseries L\-O\-W}~(0)}\label{gpio_8h_ab811d8c6ff3a505312d3276590444289}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{gpio_8h_a05848de25ac2dbec233935058a1d24b4}{init} ()
+\item 
+int \hyperlink{gpio_8h_a2b20fcfd35f6c05776a28257a5f9baaa}{pin\-Mode} (\hyperlink{structs___p_i_n}{P\-I\-N} pin, unsigned char direction, unsigned char mux, unsigned char pull)
+\item 
+int \hyperlink{gpio_8h_a9507becb482f68c51a7c22496f485674}{digital\-Write} (\hyperlink{structs___p_i_n}{P\-I\-N} p, uint8\-\_\-t mode)
+\item 
+int \hyperlink{gpio_8h_ab2ea541c9b5174f0efb0cc8d098b7546}{digital\-Read} (\hyperlink{structs___p_i_n}{P\-I\-N} p)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Ethan Hayon
+\end{DoxyAuthor}
+This file contains the headers for \hyperlink{gpio_8c}{gpio.\-c}
+
+Licensed under the M\-I\-T License (M\-I\-T) See M\-I\-T-\/\-L\-I\-C\-E\-N\-S\-E file for more information 
+
+\subsection{Function Documentation}
+\hypertarget{gpio_8h_ab2ea541c9b5174f0efb0cc8d098b7546}{\index{gpio.\-h@{gpio.\-h}!digital\-Read@{digital\-Read}}
+\index{digital\-Read@{digital\-Read}!gpio.h@{gpio.\-h}}
+\subsubsection[{digital\-Read}]{\setlength{\rightskip}{0pt plus 5cm}int digital\-Read (
+\begin{DoxyParamCaption}
+\item[{{\bf P\-I\-N}}]{p}
+\end{DoxyParamCaption}
+)}}\label{gpio_8h_ab2ea541c9b5174f0efb0cc8d098b7546}
+Read the input from a digital input. You must set the pin as an I\-N\-P\-U\-T using the pin\-Mode function
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Pin to read from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value of the pin 
+\end{DoxyReturn}
+\hypertarget{gpio_8h_a9507becb482f68c51a7c22496f485674}{\index{gpio.\-h@{gpio.\-h}!digital\-Write@{digital\-Write}}
+\index{digital\-Write@{digital\-Write}!gpio.h@{gpio.\-h}}
+\subsubsection[{digital\-Write}]{\setlength{\rightskip}{0pt plus 5cm}int digital\-Write (
+\begin{DoxyParamCaption}
+\item[{{\bf P\-I\-N}}]{p, }
+\item[{uint8\-\_\-t}]{mode}
+\end{DoxyParamCaption}
+)}}\label{gpio_8h_a9507becb482f68c51a7c22496f485674}
+Set a G\-P\-I\-O digital output $\ast$ 
+\begin{DoxyParams}{Parameters}
+{\em p} & Pin to write to\\
+\hline
+{\em mode} & Position to set the pin, H\-I\-G\-H or L\-O\-W \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+output was successfully written 
+\end{DoxyReturn}
+\hypertarget{gpio_8h_a05848de25ac2dbec233935058a1d24b4}{\index{gpio.\-h@{gpio.\-h}!init@{init}}
+\index{init@{init}!gpio.h@{gpio.\-h}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}int init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{gpio_8h_a05848de25ac2dbec233935058a1d24b4}
+mmap /dev/mem into memory
+
+map /dev/mem to memory
+
+\begin{DoxyReturn}{Returns}
+whether or not the mapping of /dev/mem into memory was successful 
+\end{DoxyReturn}
+\hypertarget{gpio_8h_a2b20fcfd35f6c05776a28257a5f9baaa}{\index{gpio.\-h@{gpio.\-h}!pin\-Mode@{pin\-Mode}}
+\index{pin\-Mode@{pin\-Mode}!gpio.h@{gpio.\-h}}
+\subsubsection[{pin\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}int pin\-Mode (
+\begin{DoxyParamCaption}
+\item[{{\bf P\-I\-N}}]{pin, }
+\item[{unsigned char}]{direction, }
+\item[{unsigned char}]{mux, }
+\item[{unsigned char}]{pull}
+\end{DoxyParamCaption}
+)}}\label{gpio_8h_a2b20fcfd35f6c05776a28257a5f9baaa}
+Set up a pin for future use
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & The pin to set up \\
+\hline
+{\em direction} & Configure the pin as I\-N\-P\-U\-T or O\-U\-T\-P\-U\-T \\
+\hline
+{\em mux} & Mux mode to use for this pin 0-\/7 \\
+\hline
+{\em pull} & P\-U\-L\-L\-U\-P, P\-U\-L\-L\-D\-O\-W\-N, or D\-I\-S\-A\-B\-L\-E\-D \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the pin was successfully configured 
+\end{DoxyReturn}

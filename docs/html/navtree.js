@@ -21,7 +21,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"am335x_8h_source.html"
+"am335x_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
