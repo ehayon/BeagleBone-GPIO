@@ -67,7 +67,7 @@ int pinMode(PIN pin, unsigned char direction, unsigned char mux, unsigned char p
 	}
 	fprintf(fp, "%x", pin_data);
 	fclose(fp);
-	
+
 	return 1;
 }
 
@@ -96,3 +96,69 @@ int digitalRead(PIN p) {
 	init();
 	return (map[(p.gpio_bank-MMAP_OFFSET+GPIO_DATAIN)/4] & (1<<p.bank_id))>>p.bank_id;
 }
+
+
+/**
+ * Initializee the Analog-Digital Converter
+ */
+int adc_init() {
+	init();
+
+	// enable the CM_WKUP_ADC_TSC_CLKCTRL with CM_WKUP_MODUELEMODE_ENABLE
+	map[(CM_WKUP_ADC_TSC_CLKCTRL-MMAP_OFFSET)/4] |= CM_WKUP_MODULEMODE_ENABLE;
+
+	// wait for the enable to complete
+	while(!(map[(CM_WKUP_ADC_TSC_CLKCTRL-MMAP_OFFSET)/4] & CM_WKUP_MODULEMODE_ENABLE)) {
+		// waiting for adc clock module to initialize
+		//printf("Waiting for CM_WKUP_ADC_TSC_CLKCTRL to enable with MODULEMODE_ENABLE\n");
+	}
+	// software reset, set bit 1 of sysconfig high?
+	// make sure STEPCONFIG write protect is off
+	map[(ADC_CTRL-MMAP_OFFSET)/4] |= ADC_STEPCONFIG_WRITE_PROTECT_OFF;
+
+	// set up each ADCSTEPCONFIG for each ain pin
+	map[(ADCSTEPCONFIG1-MMAP_OFFSET)/4] = 0x00<<19 | 0x100<<2;
+	map[(ADCSTEPDELAY1-MMAP_OFFSET)/4]  = (0x0F)<<24;
+	map[(ADCSTEPCONFIG2-MMAP_OFFSET)/4] = 0x01<<19 | 0x100<<2;
+	map[(ADCSTEPDELAY2-MMAP_OFFSET)/4]  = (0x0F)<<24;
+	map[(ADCSTEPCONFIG3-MMAP_OFFSET)/4] = 0x02<<19 | 0x100<<2;
+	map[(ADCSTEPDELAY3-MMAP_OFFSET)/4]  = (0x0F)<<24;
+	map[(ADCSTEPCONFIG4-MMAP_OFFSET)/4] = 0x03<<19 | 0x100<<2;
+	map[(ADCSTEPDELAY4-MMAP_OFFSET)/4]  = (0x0F)<<24;
+	map[(ADCSTEPCONFIG5-MMAP_OFFSET)/4] = 0x04<<19 | 0x100<<2;
+	map[(ADCSTEPDELAY5-MMAP_OFFSET)/4]  = (0x0F)<<24;
+	map[(ADCSTEPCONFIG6-MMAP_OFFSET)/4] = 0x05<<19 | 0x100<<2;
+	map[(ADCSTEPDELAY6-MMAP_OFFSET)/4]  = (0x0F)<<24;
+	map[(ADCSTEPCONFIG7-MMAP_OFFSET)/4] = 0x06<<19 | 0x100<<2;
+	map[(ADCSTEPDELAY7-MMAP_OFFSET)/4]  = (0x0F)<<24;
+	map[(ADCSTEPCONFIG8-MMAP_OFFSET)/4] = 0x07<<19 | 0x100<<2;
+	map[(ADCSTEPDELAY8-MMAP_OFFSET)/4]  = (0x0F)<<24;
+
+	// enable the ADC
+	map[(ADC_CTRL-MMAP_OFFSET)/4] |= 0x01;
+}
+
+/**
+ * Read in from an analog pin
+ *
+ * @param p pin to read value from
+ * @returns the analog value of pin p
+ */
+
+int analogRead(PIN p) {
+	init();
+	if(map[(CM_WKUP_ADC_TSC_CLKCTRL-MMAP_OFFSET)/4] & CM_WKUP_IDLEST_DISABLED) 
+		adc_init();
+	
+	// enable the step sequencer for this pin
+	map[(ADC_STEPENABLE-MMAP_OFFSET)/4] |= (0x01<<(p.bank_id+1));
+
+	// return the the FIFO0 data register
+	return map[(ADC_FIFO0DATA-MMAP_OFFSET)/4] & ADC_FIFO_MASK;
+}
+
+
+
+
+
+
