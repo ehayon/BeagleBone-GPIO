@@ -21,7 +21,6 @@ static char mapped = FALSE;
  */
 int init() {
 	if(!mapped) {
-		puts("Initializing...");
 		int fd;
 		fd = open("/dev/mem", O_RDWR);
 		if(fd == -1) {
@@ -80,8 +79,10 @@ int pinMode(PIN pin, unsigned char direction, unsigned char mux, unsigned char p
  */
 int digitalWrite(PIN p, uint8_t mode) {
 	init();
+	map[(p.gpio_bank-MMAP_OFFSET+GPIO_OE)/4] &= ~(1<<p.bank_id);
 	if(mode == HIGH) map[(p.gpio_bank-MMAP_OFFSET+GPIO_DATAOUT)/4] |= 1<<p.bank_id;
 	else map[(p.gpio_bank-MMAP_OFFSET+GPIO_DATAOUT)/4] &= ~(1<<p.bank_id);
+
 	return 1;
 }
 
