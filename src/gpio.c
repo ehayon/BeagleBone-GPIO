@@ -50,14 +50,14 @@ int init() {
 int pinMode(PIN pin, unsigned char direction, unsigned char mux, unsigned char pull) {
 	// map over the values of pull, 0=pulldown, 1=pullup, 2=disabled
 	int pin_data = 0;
+	FILE *fp = NULL;
+	char muxfile[64];
 	pin_data |=  mux; // set the mux mode
 	// set up the pull up/down resistors
 	if(pull == DISABLED) pin_data |= 1 << 3;
 	if(pull == PULLUP)   pin_data |= 1 << 4;
 	pin_data |= direction << 5; // set up the pin direction
 	// write the pin_data
-	FILE *fp = NULL;
-	char muxfile[64];
 	sprintf(muxfile, "%s/%s", CONFIG_MUX_PATH, pin.mux);
 	// open the file
 	if((fp = fopen(muxfile, "w")) == NULL) {
@@ -118,21 +118,21 @@ int adc_init() {
 	map[(ADC_CTRL-MMAP_OFFSET)/4] |= ADC_STEPCONFIG_WRITE_PROTECT_OFF;
 
 	// set up each ADCSTEPCONFIG for each ain pin
-	map[(ADCSTEPCONFIG1-MMAP_OFFSET)/4] = 0x00<<19 | 0x100<<2;
+	map[(ADCSTEPCONFIG1-MMAP_OFFSET)/4] = 0x00<<19 | ADC_AVG16;
 	map[(ADCSTEPDELAY1-MMAP_OFFSET)/4]  = (0x0F)<<24;
-	map[(ADCSTEPCONFIG2-MMAP_OFFSET)/4] = 0x01<<19 | 0x100<<2;
+	map[(ADCSTEPCONFIG2-MMAP_OFFSET)/4] = 0x01<<19 | ADC_AVG16;
 	map[(ADCSTEPDELAY2-MMAP_OFFSET)/4]  = (0x0F)<<24;
-	map[(ADCSTEPCONFIG3-MMAP_OFFSET)/4] = 0x02<<19 | 0x100<<2;
+	map[(ADCSTEPCONFIG3-MMAP_OFFSET)/4] = 0x02<<19 | ADC_AVG16;
 	map[(ADCSTEPDELAY3-MMAP_OFFSET)/4]  = (0x0F)<<24;
-	map[(ADCSTEPCONFIG4-MMAP_OFFSET)/4] = 0x03<<19 | 0x100<<2;
+	map[(ADCSTEPCONFIG4-MMAP_OFFSET)/4] = 0x03<<19 | ADC_AVG16;
 	map[(ADCSTEPDELAY4-MMAP_OFFSET)/4]  = (0x0F)<<24;
-	map[(ADCSTEPCONFIG5-MMAP_OFFSET)/4] = 0x04<<19 | 0x100<<2;
+	map[(ADCSTEPCONFIG5-MMAP_OFFSET)/4] = 0x04<<19 | ADC_AVG16;
 	map[(ADCSTEPDELAY5-MMAP_OFFSET)/4]  = (0x0F)<<24;
-	map[(ADCSTEPCONFIG6-MMAP_OFFSET)/4] = 0x05<<19 | 0x100<<2;
+	map[(ADCSTEPCONFIG6-MMAP_OFFSET)/4] = 0x05<<19 | ADC_AVG16;
 	map[(ADCSTEPDELAY6-MMAP_OFFSET)/4]  = (0x0F)<<24;
-	map[(ADCSTEPCONFIG7-MMAP_OFFSET)/4] = 0x06<<19 | 0x100<<2;
+	map[(ADCSTEPCONFIG7-MMAP_OFFSET)/4] = 0x06<<19 | ADC_AVG16;
 	map[(ADCSTEPDELAY7-MMAP_OFFSET)/4]  = (0x0F)<<24;
-	map[(ADCSTEPCONFIG8-MMAP_OFFSET)/4] = 0x07<<19 | 0x100<<2;
+	map[(ADCSTEPCONFIG8-MMAP_OFFSET)/4] = 0x07<<19 | ADC_AVG16;
 	map[(ADCSTEPDELAY8-MMAP_OFFSET)/4]  = (0x0F)<<24;
 
 	// enable the ADC
@@ -145,10 +145,11 @@ int adc_init() {
  * @param p pin to read value from
  * @returns the analog value of pin p
  */
-
 int analogRead(PIN p) {
 	init();
-	if(map[(CM_WKUP_ADC_TSC_CLKCTRL-MMAP_OFFSET)/4] & CM_WKUP_IDLEST_DISABLED) 
+	
+	// the clock module is not enabled
+	if(map[(CM_WKUP_ADC_TSC_CLKCTRL-MMAP_OFFSET)/4] & CM_WKUP_IDLEST_DISABLED)
 		adc_init();
 	
 	// enable the step sequencer for this pin

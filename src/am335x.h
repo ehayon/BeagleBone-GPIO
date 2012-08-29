@@ -66,6 +66,12 @@
 #define ADCSTEPCONFIG8 (ADC_TSC+0x9C)
 #define ADCSTEPDELAY8  (ADC_TSC+0xA0)
 
+#define ADC_AVG0  (0x000)
+#define ADC_AVG2  (0x001)
+#define ADC_AVG4  (0x010)
+#define ADC_AVG8  (0x011)
+#define ADC_AVG16 (0x100) 
+
 #define ADC_FIFO0DATA (ADC_TSC+0x100)
 #define ADC_FIFO_MASK (0xFFF)
 
