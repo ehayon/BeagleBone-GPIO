@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>GPIO MMAP: src/am335x.h File Reference</title>
+<title>BBGPIO: src/am335x.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,9 +27,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">GPIO MMAP
+   <div id="projectname">BBGPIO
    </div>
-   <div id="projectbrief">GPIO MMAP for Beaglebone</div>
+   <div id="projectbrief">High Performance BeagleBone GPIO</div>
   </td>
  </tr>
  </tbody>
@@ -120,11 +120,35 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a8ff6e6c7f0cf0d6c8814c58845f6a243"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8ff6e6c7f0cf0d6c8814c58845f6a243"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MMAP_OFFSET</b>&#160;&#160;&#160;(0x44E0F000)</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MMAP_OFFSET</b>&#160;&#160;&#160;(0x44C00000)</td></tr>
 <tr class="separator:a8ff6e6c7f0cf0d6c8814c58845f6a243"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e086fd4bfcf1930e8ffbcdd53f62a6a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e086fd4bfcf1930e8ffbcdd53f62a6a"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MMAP_SIZE</b>&#160;&#160;&#160;(0x481AEFFF-MMAP_OFFSET)</td></tr>
 <tr class="separator:a1e086fd4bfcf1930e8ffbcdd53f62a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a738b28c30c6b164083ac83b808d16f40"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a738b28c30c6b164083ac83b808d16f40"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CM_WKUP</b>&#160;&#160;&#160;(0x44E00400)</td></tr>
+<tr class="separator:a738b28c30c6b164083ac83b808d16f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7076b9d63d6ff434a6b30ae43795d9e3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7076b9d63d6ff434a6b30ae43795d9e3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CM_WKUP_ADC_TSC_CLKCTRL</b>&#160;&#160;&#160;(CM_WKUP+0xBC)</td></tr>
+<tr class="separator:a7076b9d63d6ff434a6b30ae43795d9e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a958e354065c8470f61e1dd87ae79c25b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a958e354065c8470f61e1dd87ae79c25b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CM_WKUP_MODULEMODE_ENABLE</b>&#160;&#160;&#160;(0x02)</td></tr>
+<tr class="separator:a958e354065c8470f61e1dd87ae79c25b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7d2b71c69d766830e1c1685449d5036"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7d2b71c69d766830e1c1685449d5036"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CM_WKUP_IDLEST_DISABLED</b>&#160;&#160;&#160;(0x03&lt;&lt;16)</td></tr>
+<tr class="separator:ab7d2b71c69d766830e1c1685449d5036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e898895484e45d7975817913b2efdd2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e898895484e45d7975817913b2efdd2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CM_PER</b>&#160;&#160;&#160;(0x44E00000)</td></tr>
+<tr class="separator:a4e898895484e45d7975817913b2efdd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a085987c1389093cbcb22639fb9b30da4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a085987c1389093cbcb22639fb9b30da4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CM_PER_EPWMSS1_CLKCTRL</b>&#160;&#160;&#160;(CM_PER+0xCC)</td></tr>
+<tr class="separator:a085987c1389093cbcb22639fb9b30da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0b694e5419211397fba4aeca0234071"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae0b694e5419211397fba4aeca0234071"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CM_PER_EPWMSS0_CLKCTRL</b>&#160;&#160;&#160;(CM_PER+0xD4)</td></tr>
+<tr class="separator:ae0b694e5419211397fba4aeca0234071"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e5593fda563b7d7ec7a36ba6f5e28ba"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e5593fda563b7d7ec7a36ba6f5e28ba"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CM_PER_EPWMSS2_CLKCTRL</b>&#160;&#160;&#160;(CM_PER+0xD8)</td></tr>
+<tr class="separator:a2e5593fda563b7d7ec7a36ba6f5e28ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19e52f2d596f9752ae1c2215954e0e5a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19e52f2d596f9752ae1c2215954e0e5a"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>GPIO_REGISTER_SIZE</b>&#160;&#160;&#160;(4)</td></tr>
 <tr class="separator:a19e52f2d596f9752ae1c2215954e0e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,6 +179,72 @@ Macros</h2></td></tr>
 <tr class="memitem:a923aebe8e58c245cd95df28c8c1bdfec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a923aebe8e58c245cd95df28c8c1bdfec"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>GPIO_DATAIN</b>&#160;&#160;&#160;(0x138)</td></tr>
 <tr class="separator:a923aebe8e58c245cd95df28c8c1bdfec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c2a7001baabff34254b5cd391d8096f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2c2a7001baabff34254b5cd391d8096f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADC_TSC</b>&#160;&#160;&#160;(0x44E0D000)</td></tr>
+<tr class="separator:a2c2a7001baabff34254b5cd391d8096f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32af09f72946127b7d8f5f0d11de8d67"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a32af09f72946127b7d8f5f0d11de8d67"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADC_CTRL</b>&#160;&#160;&#160;(ADC_TSC+0x40)</td></tr>
+<tr class="separator:a32af09f72946127b7d8f5f0d11de8d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24e17d6a6db37b13795fdf5e7da5a0f9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24e17d6a6db37b13795fdf5e7da5a0f9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADC_STEPCONFIG_WRITE_PROTECT_OFF</b>&#160;&#160;&#160;(0x01&lt;&lt;2)</td></tr>
+<tr class="separator:a24e17d6a6db37b13795fdf5e7da5a0f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28b979d9f2c71fbe2e64352fb18dc308"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a28b979d9f2c71fbe2e64352fb18dc308"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADC_STEPENABLE</b>&#160;&#160;&#160;(ADC_TSC+0x54)</td></tr>
+<tr class="separator:a28b979d9f2c71fbe2e64352fb18dc308"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70f0f0b2a0eac4ca3434c3b673c27633"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a70f0f0b2a0eac4ca3434c3b673c27633"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADCSTEPCONFIG1</b>&#160;&#160;&#160;(ADC_TSC+0x64)</td></tr>
+<tr class="separator:a70f0f0b2a0eac4ca3434c3b673c27633"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47a142e4f2a9300bf2f7c76d7ab53b1b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a47a142e4f2a9300bf2f7c76d7ab53b1b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADCSTEPDELAY1</b>&#160;&#160;&#160;(ADC_TSC+0x68)</td></tr>
+<tr class="separator:a47a142e4f2a9300bf2f7c76d7ab53b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08c7134a92fa8292f10d5b41e0db01e5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a08c7134a92fa8292f10d5b41e0db01e5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADCSTEPCONFIG2</b>&#160;&#160;&#160;(ADC_TSC+0x6C)</td></tr>
+<tr class="separator:a08c7134a92fa8292f10d5b41e0db01e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c2ab44070bfaaada9362710bd1903ce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c2ab44070bfaaada9362710bd1903ce"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADCSTEPDELAY2</b>&#160;&#160;&#160;(ADC_TSC+0x70)</td></tr>
+<tr class="separator:a8c2ab44070bfaaada9362710bd1903ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30e79631480914aeafa66ca570934872"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a30e79631480914aeafa66ca570934872"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADCSTEPCONFIG3</b>&#160;&#160;&#160;(ADC_TSC+0x74)</td></tr>
+<tr class="separator:a30e79631480914aeafa66ca570934872"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35925f7306ec425f6b27cf5b18b23ccc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a35925f7306ec425f6b27cf5b18b23ccc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADCSTEPDELAY3</b>&#160;&#160;&#160;(ADC_TSC+0x78)</td></tr>
+<tr class="separator:a35925f7306ec425f6b27cf5b18b23ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79c82fd0f917054435ab3f2983325633"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a79c82fd0f917054435ab3f2983325633"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADCSTEPCONFIG4</b>&#160;&#160;&#160;(ADC_TSC+0x7C)</td></tr>
+<tr class="separator:a79c82fd0f917054435ab3f2983325633"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae059dfe0ed9ba75bb45532b5a7319542"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae059dfe0ed9ba75bb45532b5a7319542"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADCSTEPDELAY4</b>&#160;&#160;&#160;(ADC_TSC+0x80)</td></tr>
+<tr class="separator:ae059dfe0ed9ba75bb45532b5a7319542"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85826a576eb2ddb7707c4e187b84d8fa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85826a576eb2ddb7707c4e187b84d8fa"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADCSTEPCONFIG5</b>&#160;&#160;&#160;(ADC_TSC+0x84)</td></tr>
+<tr class="separator:a85826a576eb2ddb7707c4e187b84d8fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbe5596bf6d666517239ed6e72534183"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afbe5596bf6d666517239ed6e72534183"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADCSTEPDELAY5</b>&#160;&#160;&#160;(ADC_TSC+0x88)</td></tr>
+<tr class="separator:afbe5596bf6d666517239ed6e72534183"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a543cbd7ad272d99f4500c37a6d51e470"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a543cbd7ad272d99f4500c37a6d51e470"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADCSTEPCONFIG6</b>&#160;&#160;&#160;(ADC_TSC+0x8C)</td></tr>
+<tr class="separator:a543cbd7ad272d99f4500c37a6d51e470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a124868023873e7b69c400a87c57d7803"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a124868023873e7b69c400a87c57d7803"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADCSTEPDELAY6</b>&#160;&#160;&#160;(ADC_TSC+0x90)</td></tr>
+<tr class="separator:a124868023873e7b69c400a87c57d7803"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27a38c7266b36a3046ebb944f8bef76e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a27a38c7266b36a3046ebb944f8bef76e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADCSTEPCONFIG7</b>&#160;&#160;&#160;(ADC_TSC+0x94)</td></tr>
+<tr class="separator:a27a38c7266b36a3046ebb944f8bef76e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02439257e907670a7729948bb3ebdcd6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02439257e907670a7729948bb3ebdcd6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADCSTEPDELAY7</b>&#160;&#160;&#160;(ADC_TSC+0x98)</td></tr>
+<tr class="separator:a02439257e907670a7729948bb3ebdcd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af38e2d67f9aaad632da638c7bda4ac18"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af38e2d67f9aaad632da638c7bda4ac18"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADCSTEPCONFIG8</b>&#160;&#160;&#160;(ADC_TSC+0x9C)</td></tr>
+<tr class="separator:af38e2d67f9aaad632da638c7bda4ac18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c6910488bc7dd91ef11018f50148eb4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0c6910488bc7dd91ef11018f50148eb4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADCSTEPDELAY8</b>&#160;&#160;&#160;(ADC_TSC+0xA0)</td></tr>
+<tr class="separator:a0c6910488bc7dd91ef11018f50148eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35b27841214d23ea71e976c25794bd08"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a35b27841214d23ea71e976c25794bd08"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADC_FIFO0DATA</b>&#160;&#160;&#160;(ADC_TSC+0x100)</td></tr>
+<tr class="separator:a35b27841214d23ea71e976c25794bd08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91473c3e80ba8e197842cfcfb7a63691"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a91473c3e80ba8e197842cfcfb7a63691"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADC_FIFO_MASK</b>&#160;&#160;&#160;(0xFFF)</td></tr>
+<tr class="separator:a91473c3e80ba8e197842cfcfb7a63691"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8cecfc5c5c054d2875c03e77b7be15d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa8cecfc5c5c054d2875c03e77b7be15d"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>TRUE</b>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:aa8cecfc5c5c054d2875c03e77b7be15d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,16 +252,16 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>FALSE</b>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:aa93f0eb578d23995850d61f7d61c55c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf523f70cfac998cdb8f0d6e74d0ef59"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf523f70cfac998cdb8f0d6e74d0ef59"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>USR0</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){	&quot;GPIO1_21&quot;,	   GPIO1,     0,   21,   &quot;&quot;,				0,     FALSE, 0   })</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>USR0</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){	  &quot;GPIO1_21&quot;,	   GPIO1,     0,   21,   &quot;&quot;,				0,     FALSE, 0   })</td></tr>
 <tr class="separator:abf523f70cfac998cdb8f0d6e74d0ef59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a622356eb27f8285cb024c162532b909b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a622356eb27f8285cb024c162532b909b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>USR1</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){	&quot;GPIO1_22&quot;,	   GPIO1,     0,   22,   &quot;&quot;,				0,     FALSE, 0   })</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>USR1</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){	  &quot;GPIO1_22&quot;,	   GPIO1,     0,   22,   &quot;&quot;,				0,     FALSE, 0   })</td></tr>
 <tr class="separator:a622356eb27f8285cb024c162532b909b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf2da54727349a3b27a3b43ba6540e27"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf2da54727349a3b27a3b43ba6540e27"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>USR2</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){	&quot;GPIO1_23&quot;,	   GPIO1,     0,   23,   &quot;&quot;,				0,     FALSE, 0   })</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>USR2</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){	  &quot;GPIO1_23&quot;,	   GPIO1,     0,   23,   &quot;&quot;,				0,     FALSE, 0   })</td></tr>
 <tr class="separator:acf2da54727349a3b27a3b43ba6540e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6edcacea53db67d9843a1f4c18eeb769"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6edcacea53db67d9843a1f4c18eeb769"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>USR3</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){	&quot;GPIO1_24&quot;,	   GPIO1,     0,   24,   &quot;&quot;,				0,     FALSE, 0   })</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>USR3</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){	  &quot;GPIO1_24&quot;,	   GPIO1,     0,   24,   &quot;&quot;,				0,     FALSE, 0   })</td></tr>
 <tr class="separator:a6edcacea53db67d9843a1f4c18eeb769"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48ccf1474072fdfbf1534c36609e5a46"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a48ccf1474072fdfbf1534c36609e5a46"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>P8_3</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;GPIO1_6&quot;,	   GPIO1,     38, 	6,	 &quot;gpmc_ad6&quot;,        26,    FALSE, 0   })</td></tr>
@@ -305,6 +395,96 @@ Macros</h2></td></tr>
 <tr class="memitem:a17f975f605f512aee14163998c6e5d3b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a17f975f605f512aee14163998c6e5d3b"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>P8_46</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;GPIO2_7&quot;,     GPIO2,     71, 	7,	 &quot;lcd_data1&quot;,       46,    TRUE,  (<a class="el" href="structs___p_w_m.html">PWM</a>){3, &quot;EHRPWM2B&quot;, &quot;ehrpwm.2:1&quot;}})</td></tr>
 <tr class="separator:a17f975f605f512aee14163998c6e5d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5847898ec31b4a2d1691880e09eb179b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5847898ec31b4a2d1691880e09eb179b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_11</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;UART4_RXD&quot;,   GPIO0,     30,  30,   &quot;gpmc_wait0&quot;,       18,   FALSE, 0})</td></tr>
+<tr class="separator:a5847898ec31b4a2d1691880e09eb179b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2a4f9189bfb0f7537acc27d7aa9b21d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2a4f9189bfb0f7537acc27d7aa9b21d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_12</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;GPIO1_28&quot;,    GPIO1,     60,  28,   &quot;gpmc_ben1&quot;,        36,   FALSE, 0})</td></tr>
+<tr class="separator:ae2a4f9189bfb0f7537acc27d7aa9b21d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8f01ee5ca27431f26bde877ad370ee2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac8f01ee5ca27431f26bde877ad370ee2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_13</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;UART4_TXD&quot;,   GPIO0,     31,  31,   &quot;gpmc_wpn&quot;,         19,   FALSE, 0})</td></tr>
+<tr class="separator:ac8f01ee5ca27431f26bde877ad370ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d6702d8387b105c47abda35e517f77d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d6702d8387b105c47abda35e517f77d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_14</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;EHRPWM1A&quot;,    GPIO1,     50,  18,   &quot;gpmc_a2&quot;,          34,   TRUE, (<a class="el" href="structs___p_w_m.html">PWM</a>){6, &quot;EHRPWM1A&quot;, &quot;ehrpwm.1:0&quot;}})</td></tr>
+<tr class="separator:a6d6702d8387b105c47abda35e517f77d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4a4c1caa97f07c99116fcbe3ff86c18"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae4a4c1caa97f07c99116fcbe3ff86c18"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_15</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;GPIO1_16&quot;,    GPIO1,     48,  16,   &quot;mii1_rxd3&quot;,        32,   FALSE, 0})</td></tr>
+<tr class="separator:ae4a4c1caa97f07c99116fcbe3ff86c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f2090c8cfbe0b7a68414df9a565e9e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6f2090c8cfbe0b7a68414df9a565e9e0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_16</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;EHRPWM1B&quot;,    GPIO1,     51,  19,   &quot;gpmc_a3&quot;,          35,   TRUE, (<a class="el" href="structs___p_w_m.html">PWM</a>){6, &quot;EHRPWM1B&quot;, &quot;ehrpwm.1:1&quot;}})</td></tr>
+<tr class="separator:a6f2090c8cfbe0b7a68414df9a565e9e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af447c6c1c740b6b7d9bd14bbeb9492c5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af447c6c1c740b6b7d9bd14bbeb9492c5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_17</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;I2C1_SCL&quot;,    GPIO0,      5,   5,   &quot;spi0_cs0&quot;,          3,   FALSE, 0})</td></tr>
+<tr class="separator:af447c6c1c740b6b7d9bd14bbeb9492c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec8e861fc86bf9ca850c08cefd8e2fd8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec8e861fc86bf9ca850c08cefd8e2fd8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_18</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;I2C1_SDA&quot;,    GPIO0,      4,   4,   &quot;spi0_d1&quot;,           2,   FALSE, 0})</td></tr>
+<tr class="separator:aec8e861fc86bf9ca850c08cefd8e2fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82774479f6717730519e3a51e54bddb7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a82774479f6717730519e3a51e54bddb7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_19</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;I2C2_SCL&quot;,    GPIO0,     13,  13,   &quot;uart1_rtsn&quot;,        9,   FALSE, 0})</td></tr>
+<tr class="separator:a82774479f6717730519e3a51e54bddb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0615557dbf001a9f94497687f660f82b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0615557dbf001a9f94497687f660f82b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_20</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;I2C2_SDA&quot;,    GPIO0,     12,  12,   &quot;uart1_ctsn&quot;,       10,   FALSE, 0})</td></tr>
+<tr class="separator:a0615557dbf001a9f94497687f660f82b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e5b5c1bc39fdeeaa2fd24be706eb9c1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e5b5c1bc39fdeeaa2fd24be706eb9c1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_21</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;UART2_TXD&quot;,   GPIO0,      3,   3,   &quot;spi0_d0&quot;,           1,   TRUE, (<a class="el" href="structs___p_w_m.html">PWM</a>){3, &quot;EHRPWM0B&quot;, &quot;ehrpwm.0:1&quot;}})</td></tr>
+<tr class="separator:a1e5b5c1bc39fdeeaa2fd24be706eb9c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa4d8ec27379bfcb27ebaa8006600361"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa4d8ec27379bfcb27ebaa8006600361"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_22</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;UART2_RXD&quot;,   GPIO0,      2,   2,   &quot;spi0_sclk&quot;,         0,   TRUE, (<a class="el" href="structs___p_w_m.html">PWM</a>){3, &quot;EHRPWM0A&quot;, &quot;ehrpwm.0:0&quot;}})</td></tr>
+<tr class="separator:aaa4d8ec27379bfcb27ebaa8006600361"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac7553c86578a0f5ee8fbbb12ed4aeed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac7553c86578a0f5ee8fbbb12ed4aeed"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_23</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;GPIO1_17&quot;,    GPIO1,     49,  17,   &quot;gpmc_a1&quot;,          33,   FALSE, 0})</td></tr>
+<tr class="separator:aac7553c86578a0f5ee8fbbb12ed4aeed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42e066e4b1823b8c33c1109583f78073"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42e066e4b1823b8c33c1109583f78073"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_24</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;UART1_TXD&quot;,   GPIO0,     15,  15,   &quot;uart1_txd&quot;,        12,   FALSE, 0})</td></tr>
+<tr class="separator:a42e066e4b1823b8c33c1109583f78073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabe4533e87b996aeb00e1875e9c06926"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aabe4533e87b996aeb00e1875e9c06926"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_25</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;GPIO3_21&quot;,    GPIO3,    117,  21,   &quot;mcasp0_ahclkx&quot;,    66,   FALSE, 0})</td></tr>
+<tr class="separator:aabe4533e87b996aeb00e1875e9c06926"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc51cb1a967826d007f70daccb479d77"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abc51cb1a967826d007f70daccb479d77"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_26</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;UART1_RXD&quot;,   GPIO0,     14,  14,   &quot;uart1_rxd&quot;,        11,   FALSE, 0})</td></tr>
+<tr class="separator:abc51cb1a967826d007f70daccb479d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ea6b5083d1d71b92246715f4881ae75"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ea6b5083d1d71b92246715f4881ae75"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_27</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;GPIO3_19&quot;,    GPIO3,    115,  19,   &quot;mcasp0_fsr&quot;,       64,   FALSE, 0})</td></tr>
+<tr class="separator:a5ea6b5083d1d71b92246715f4881ae75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00f9fc2a1d72629ad9604fcecf3d7449"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a00f9fc2a1d72629ad9604fcecf3d7449"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_28</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;SPI1_CS0&quot;,    GPIO3,    113,  17,   &quot;mcasp0_ahclkr&quot;,    63,   TRUE, (<a class="el" href="structs___p_w_m.html">PWM</a>){4, &quot;ECAPPWM2&quot;, &quot;ecap.2&quot;}})</td></tr>
+<tr class="separator:a00f9fc2a1d72629ad9604fcecf3d7449"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fc77030efafd7f2644c44380fc4ba57"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8fc77030efafd7f2644c44380fc4ba57"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_29</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;SPI1_D0&quot;,     GPIO3,    111,  15,   &quot;mcasp0_fsx&quot;,       61,   TRUE, (<a class="el" href="structs___p_w_m.html">PWM</a>){1, &quot;EHRPWM0B&quot;, &quot;ehrpwm.0:1&quot;}})</td></tr>
+<tr class="separator:a8fc77030efafd7f2644c44380fc4ba57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a380e3754d58fef9e448f0164dfa86d49"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a380e3754d58fef9e448f0164dfa86d49"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_30</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;SPI1_D1&quot;,     GPIO3,    112,  16,   &quot;mcasp0_axr0&quot;,      62,   FALSE, 0})</td></tr>
+<tr class="separator:a380e3754d58fef9e448f0164dfa86d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3ad8412b046ffe835cb5f1dd5ba2cbc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab3ad8412b046ffe835cb5f1dd5ba2cbc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_31</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;SPI1_SCLK&quot;,   GPIO3,    110,  14,   &quot;mcasp0_aclkx&quot;,     65,   TRUE, (<a class="el" href="structs___p_w_m.html">PWM</a>){1, &quot;EHRPWM0A&quot;, &quot;ehrpwm.0:0&quot;}})</td></tr>
+<tr class="separator:ab3ad8412b046ffe835cb5f1dd5ba2cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e28c569ef27fe2a2afe0b45af9e5038"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e28c569ef27fe2a2afe0b45af9e5038"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_33</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;AIN4&quot;,        0,          4,   4,   &quot;&quot;,                 71,   FALSE, 0})</td></tr>
+<tr class="separator:a6e28c569ef27fe2a2afe0b45af9e5038"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d8322ebee8124176b2b539e8dd7d679"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9d8322ebee8124176b2b539e8dd7d679"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_35</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;AIN6&quot;,        0,          6,   6,   &quot;&quot;,                 73,   FALSE, 0})</td></tr>
+<tr class="separator:a9d8322ebee8124176b2b539e8dd7d679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a009d0e1f44a092492a8f8244c28ed593"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a009d0e1f44a092492a8f8244c28ed593"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_36</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;AIN5&quot;,        0,          5,   5,   &quot;&quot;,                 72,   FALSE, 0})</td></tr>
+<tr class="separator:a009d0e1f44a092492a8f8244c28ed593"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8899e7067c590abe67eab3f1aadf7429"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8899e7067c590abe67eab3f1aadf7429"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_37</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;AIN2&quot;,        0,          2,   2,   &quot;&quot;,                 69,   FALSE, 0})</td></tr>
+<tr class="separator:a8899e7067c590abe67eab3f1aadf7429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6b1de330eb6808c5ff018276e956a90"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af6b1de330eb6808c5ff018276e956a90"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_38</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;AIN3&quot;,        0,          3,   3,   &quot;&quot;,                 70,   FALSE, 0})</td></tr>
+<tr class="separator:af6b1de330eb6808c5ff018276e956a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6761a7497ff1aeeedc68ddf2517bc89d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6761a7497ff1aeeedc68ddf2517bc89d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_39</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;AIN0&quot;,        0,          0,   0,   &quot;&quot;,                 67,   FALSE, 0})</td></tr>
+<tr class="separator:a6761a7497ff1aeeedc68ddf2517bc89d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade4d052454ace4e60964902f1cb34966"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ade4d052454ace4e60964902f1cb34966"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_40</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;AIN1&quot;,        0,          1,   1,   &quot;&quot;,                 68,   FALSE, 0})</td></tr>
+<tr class="separator:ade4d052454ace4e60964902f1cb34966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd49b5392266d5736fb4318b8cda4571"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd49b5392266d5736fb4318b8cda4571"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_41</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;CLKOUT2&quot;,     GPIO0,     20,  20,   &quot;xdma_event_intr1&quot;, 13,   FALSE, 0})</td></tr>
+<tr class="separator:afd49b5392266d5736fb4318b8cda4571"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8958fa3e543f75a4c30906241405e4c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac8958fa3e543f75a4c30906241405e4c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>P9_42</b>&#160;&#160;&#160;((<a class="el" href="structs___p_i_n.html">PIN</a>){   &quot;GPIO0_7&quot;,     GPIO0,      7,   7,   &quot;ecap0_in_pwm0_out&quot;, 4,   TRUE, (<a class="el" href="structs___p_w_m.html">PWM</a>){0, &quot;ECAPPWM0&quot;, &quot;ecap.0&quot;}})</td></tr>
+<tr class="separator:ac8958fa3e543f75a4c30906241405e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bb283bd7893b9855e2f23013891fc82"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1bb283bd7893b9855e2f23013891fc82"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>INPUT</b>&#160;&#160;&#160;((unsigned char)(1))</td></tr>
 <tr class="separator:a1bb283bd7893b9855e2f23013891fc82"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -344,7 +524,7 @@ typedef struct <a class="el" href="structs___p_i_n.html">s_PIN</a>&#160;</td><td
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="am335x_8h.html">am335x.h</a></li>
-    <li class="footer">Generated on Sat Aug 25 2012 12:31:02 for GPIO MMAP by
+    <li class="footer">Generated on Tue Aug 28 2012 22:23:11 for BBGPIO by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

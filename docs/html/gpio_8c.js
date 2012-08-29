@@ -1,5 +1,7 @@
 var gpio_8c =
 [
+    [ "adc_init", "gpio_8c.html#aa5a4e5e59e5afb998e973ea5cd0e952d", null ],
+    [ "analogRead", "gpio_8c.html#abf8ee8767492abfae966fcf835a0aeae", null ],
     [ "digitalRead", "gpio_8c.html#ab2ea541c9b5174f0efb0cc8d098b7546", null ],
     [ "digitalWrite", "gpio_8c.html#a9507becb482f68c51a7c22496f485674", null ],
     [ "init", "gpio_8c.html#a05848de25ac2dbec233935058a1d24b4", null ],

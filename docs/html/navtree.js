@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "GPIO MMAP", "index.html", [
+  [ "BBGPIO", "index.html", [
     [ "Data Structures", null, [
       [ "Data Structures", "annotated.html", "annotated" ],
       [ "Data Structure Index", "classes.html", null ],

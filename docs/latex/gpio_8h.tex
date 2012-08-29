@@ -28,6 +28,8 @@ int \hyperlink{gpio_8h_a2b20fcfd35f6c05776a28257a5f9baaa}{pin\-Mode} (\hyperlink
 int \hyperlink{gpio_8h_a9507becb482f68c51a7c22496f485674}{digital\-Write} (\hyperlink{structs___p_i_n}{P\-I\-N} p, uint8\-\_\-t mode)
 \item 
 int \hyperlink{gpio_8h_ab2ea541c9b5174f0efb0cc8d098b7546}{digital\-Read} (\hyperlink{structs___p_i_n}{P\-I\-N} p)
+\item 
+int \hyperlink{gpio_8h_abf8ee8767492abfae966fcf835a0aeae}{analog\-Read} (\hyperlink{structs___p_i_n}{P\-I\-N} p)
 \end{DoxyCompactItemize}
 
 
@@ -40,6 +42,23 @@ This file contains the headers for \hyperlink{gpio_8c}{gpio.\-c}
 Licensed under the M\-I\-T License (M\-I\-T) See M\-I\-T-\/\-L\-I\-C\-E\-N\-S\-E file for more information 
 
 \subsection{Function Documentation}
+\hypertarget{gpio_8h_abf8ee8767492abfae966fcf835a0aeae}{\index{gpio.\-h@{gpio.\-h}!analog\-Read@{analog\-Read}}
+\index{analog\-Read@{analog\-Read}!gpio.h@{gpio.\-h}}
+\subsubsection[{analog\-Read}]{\setlength{\rightskip}{0pt plus 5cm}int analog\-Read (
+\begin{DoxyParamCaption}
+\item[{{\bf P\-I\-N}}]{p}
+\end{DoxyParamCaption}
+)}}\label{gpio_8h_abf8ee8767492abfae966fcf835a0aeae}
+Read in from an analog pin
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & pin to read value from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the analog value of pin p 
+\end{DoxyReturn}
 \hypertarget{gpio_8h_ab2ea541c9b5174f0efb0cc8d098b7546}{\index{gpio.\-h@{gpio.\-h}!digital\-Read@{digital\-Read}}
 \index{digital\-Read@{digital\-Read}!gpio.h@{gpio.\-h}}
 \subsubsection[{digital\-Read}]{\setlength{\rightskip}{0pt plus 5cm}int digital\-Read (
