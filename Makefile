@@ -1,12 +1,12 @@
 DIR = src/
 SRC = gpio.c
 OBJ = $(DIR)$(SRC:.c=.o)
-NAME = libgpiommap.a
+NAME = ./lib/libgpiommap.a
 TMS = main.c
 TMO = $(TMS:.c=.o)
-TMN = gpiommap 
+TMN = gpiommap
 LIBS = -lgpiommap
-LIBPATH = .
+LIBPATH = ./lib
 RM = rm -f
 
 all: $(OBJ)
@@ -17,7 +17,7 @@ test: $(NAME) $(TMO)
 	cc -L$(LIBPATH) $(TMO) $(LIBS) -o $(TMN)
 
 clean:
-	-$(RM) *.o
+	-$(RM) $(OBJ)
 	-$(RM) *~
 	-$(RM) \#*
 	-$(RM) *.core
